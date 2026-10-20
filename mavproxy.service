@@ -1,0 +1,15 @@
+[Unit]
+Description=MAVProxy AutoStart Service
+After=network.target
+
+[Service]
+Type=forking
+User=uav
+WorkingDirectory=/home/uav
+ExecStart=/home/uav/mavproxy.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
